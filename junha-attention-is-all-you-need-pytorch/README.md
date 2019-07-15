@@ -7,6 +7,23 @@
 opt.max_word_seq_len
 ```
 
+- load training data(src, tgt), validation data(src, tgt), remove empty data
+- change words to index
+- `torch.save`: data = {
+        'settings': opt,
+        'dict': {
+            'src': src_word2idx,
+            'tgt': tgt_word2idx},
+        'train': {
+            'src': train_src_insts,
+            'tgt': train_tgt_insts},
+        'valid': {
+            'src': valid_src_insts,
+            'tgt': valid_tgt_insts}}
+
+
+
+
 ### read_instances_from_file(inst_file, max_sent_len, keep_case)
 - change into lower case if not have `keep_case` option
 - 문장 길이가 max_sent_len 보다 클 경우 max로 자른다 (word_inst)
